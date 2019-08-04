@@ -1,0 +1,20 @@
+{
+  "name": "curriculo-animacao",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/renan-sugiyama/curriculo-animacao.git"
+  },
+  "author": "Renan Sugiyama",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/renan-sugiyama/curriculo-animacao/issues"
+  },
+  "homepage": "https://github.com/renan-sugiyama/curriculo-animacao#readme",
+  "dependencies": {}
+}
