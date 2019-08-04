@@ -1,0 +1,42 @@
+body {
+    margin: 0;
+}
+
+#global-container {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    background-color: #333;
+    
+}
+
+.container-limit {    
+    /* 4 is the number of panels */
+    width: calc(100% * 4);
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.panel {
+    height: 100%;
+    width: 100vw;
+    float: left;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.red {
+    background-color: red;
+}
+
+.green {
+    background-color: green;
+}
+
+.yellow {
+    background-color: yellow;
+}
