@@ -50,3 +50,43 @@ body {
     width: 100%;
     position: absolute;
 }
+
+.personagem {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    position: absolute;
+    top: 80%;
+    left: 10%;
+    z-index: 9999;
+}
+
+.personagem-movimento {
+    left: 40%;
+}
+
+.personagem-up {
+    top: 60%;
+}
+
+.personagem-down {
+    top: 80%;
+}
+
+.hidePersonagem {
+    opacity: 0;
+    z-index: -1;
+}
+
+#target {
+    opacity: 0;
+}
+
+#target.showTarget {
+    opacity: 1;
+}
+
+#target img {
+    width: 90px;
+    height: auto;
+}
