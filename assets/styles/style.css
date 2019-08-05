@@ -1,6 +1,16 @@
 body {
     margin: 0;
 }
+
+
+/* telas */
+
+.tela_padrao {
+    background-image: url('../imgs/telas/tela_padrao.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
 /* 
 #global-container {
     width: 100vw;
@@ -90,3 +100,5 @@ body {
     width: 90px;
     height: auto;
 }
+
+

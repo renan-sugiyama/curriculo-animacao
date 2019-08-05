@@ -9,11 +9,13 @@
 $(function () { // wait for document ready
     // init
     var controller = new ScrollMagic.Controller();
+    // var controller = new ScrollMagic.Controller({vertical: false});
 
     // define movement of panels
     var wipeAnimation = new TimelineMax()
-        .fromTo("section.panel.turqoise", 1, {x: "100%"}, {x: "0%", ease: Linear.easeNone})  // in from left
-        .fromTo("section.panel.green", 1, {x: "100%"}, {x: "0%", ease: Linear.easeNone})  // in from left
+        
+        .fromTo("section.panel#panel2", 1, {x: "100%"}, {x: "-100%", ease: Linear.easeNone})  // in from left
+        .fromTo("section.panel#panel3", 1, {x: "100%"}, {x: "0%", ease: Linear.easeNone})  // in from left
         .fromTo("section.panel.bordeaux", 1, {y:  "100%"}, {y: "0%", ease: Linear.easeNone})  // in from right
         .fromTo("section.panel.gray", 1, {x: "120%"}, {x: "0%", ease: Linear.easeNone}) // in from top
         .fromTo("section.panel.blueviolet", 1, {x: "100%"}, {x: "0%", ease: Linear.easeNone})
@@ -29,6 +31,28 @@ $(function () { // wait for document ready
         .setTween(wipeAnimation)
         .addIndicators() // add indicators (requires plugin)
         .addTo(controller);
+
+
+
+
+    // build tween
+	// 	var parallaxtween = new TimelineMax ()
+    //     .add([
+    //         TweenMax.to("#pinContainer #panel1", 1, {backgroundPosition: "40% 0", ease: Linear.easeNone}),
+    //         TweenMax.to("#pinContainer #panel2", 1, {backgroundPosition: "500% 0", ease: Linear.easeNone}),
+    //         TweenMax.to("#pinContainer #panel3", 1, {backgroundPosition: "225% 0", ease: Linear.easeNone})
+    //     ]);
+
+    // // build scene
+    // var scene = new ScrollMagic.Scene(
+    //             {
+    //                 duration: 2000, 
+    //                 offset: 0
+    //             })
+    //                 .setTween(parallaxtween)
+    //                 .setPin("#pinContainer")
+    //                 .addIndicators() // add indicators (requires plugin)
+    //                 .addTo(controller);    
 
 
 
