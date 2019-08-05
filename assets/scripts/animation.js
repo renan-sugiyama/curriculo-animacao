@@ -81,14 +81,14 @@ $(function () { // wait for document ready
                     .to(".largura", 1.5, {transform: `translate(${posXFinal},${posYFinal})`, delay: 0}))
                     .addIndicators({name: "GSAP"}) // add indicators (requires plugin)
                     // .on('end', function(){
-                    //     document.querySelector('.largura').style.transform = 'translate(calc(100vw * -2),0)'
+                    //     document.querySelector('.largura').style.transform = `translate(calc(${posXInicial}),${posYInicial})`
                     // })
                     .addTo(controller);
     }
 
     new ScrollMagic.Scene({
         duration: 700,    // the scene should last for a scroll distance of 100px
-        offset: 7500    // start this scene after scrolling for 50px
+        offset: 10000    // start this scene after scrolling for 50px
         })
         .setTween(TweenMax.to(".contato", 1, {className: "+=show-contato"}))
         .addIndicators({name: "tween css class"}) // add indicators (requires plugin)
@@ -99,7 +99,7 @@ $(function () { // wait for document ready
     // deslocarTela(5000, '.largura', "desloca-parte2")
     deslocarTela(100, 5000, 0, '-200vw', 0, 0)
     deslocarTela(5000, 1000, '-200vw', '-200vw', 0, '-100vh')
-    deslocarTela(6000, 2000, '-200vw', '-400vw', '-100vh', '-100vh')
+    deslocarTela(6700, 4000, '-200vw', '-400vw', '-100vh', '-100vh')
 
 
         function movHorizontal (offset, posInicial, posFinal) {
@@ -165,23 +165,23 @@ $(function () { // wait for document ready
         movVertical(2200, '80%', '50%')
         movVertical(2400, '50%', '80%')
 
-        movVertical(2700, '80%', '50%')
-        movVertical(2900, '50%', '80%')
+        movVertical(3700, '80%', '50%')
+        movVertical(4400, '50%', '80%')
                     
         //movHorizontal(2600, '40%', '80%')
         
-        movVertical(4900, '80%', '60%')
+        movVertical(6700, '80%', '60%')
         
-        movVertical(5200, '60%', '40%')
+        movVertical(7000, '60%', '40%')
 
-        movVertical(5500, '40%', '20%')
+        movVertical(7300, '40%', '20%')
 
-        movVertical(5800, '20%', '10%')
+        movVertical(7600, '20%', '10%')
 
-        movHorizontal(6000, '10%', '50%')
-        movVertical(6000, '10%', '80%')
+        movHorizontal(7800, '10%', '50%')
+        movVertical(8000, '10%', '80%')
 
-        esconder(6700)
+        esconder(8400)
         //movHorizontal(5200, '80%', '10%')
 
         // pula(200)
@@ -205,10 +205,10 @@ $(function () { // wait for document ready
 				autoRotate: true,
                 values: [
                     {x:0, y:0},
-                    {x:$(window).width() - $(window).width()/5, y:0}, 
-                    {x:$(window).width() - $(window).width()/2, y:-80}, 
-                    {x:$(window).width() - $(window).width()/3, y:$(window).height()/4-$(window).height()},
-                    {x:$(window).width()+300, y:$(window).height()-200}
+                    {x:300 - $(window).width(), y:0}, 
+                    {x:$(window).width()/1.5 - $(window).width(), y:-80}, 
+                    {x:$(window).width() - $(window).width()/1.5, y:$(window).height()/4-$(window).height()},
+                    {x:$(window).width()-300, y:$(window).height()-200}
                 ]
 			}
         };
@@ -219,7 +219,7 @@ $(function () { // wait for document ready
         
             new ScrollMagic.Scene({
                 duration: 100,    // the scene should last for a scroll distance of 100px
-                offset: 7000    // start this scene after scrolling for 50px
+                offset: 9000    // start this scene after scrolling for 50px
                 })
                 .setTween(TweenMax.to("#target", 1, {className: "+=showTarget"}))
                 .addIndicators({name: "tween css class"}) // add indicators (requires plugin)
@@ -236,7 +236,7 @@ $(function () { // wait for document ready
 		// build scene
 		var scene = new ScrollMagic.Scene({
             duration: 900,    // the scene should last for a scroll distance of 100px
-            offset: 7000    // start this scene after scrolling for 50px
+            offset: 9000    // start this scene after scrolling for 50px
             })
 						.setPin("#target")
 						.setTween(emailtween)
