@@ -12,25 +12,25 @@ $(function () { // wait for document ready
     // var controller = new ScrollMagic.Controller({vertical: false});
 
     // define movement of panels
-    var wipeAnimation = new TimelineMax()
+    // var wipeAnimation = new TimelineMax()
         
-        .fromTo("section.panel#panel2", 1, {x: "100%"}, {x: "-100%", ease: Linear.easeNone})  // in from left
-        .fromTo("section.panel#panel3", 1, {x: "100%"}, {x: "0%", ease: Linear.easeNone})  // in from left
-        .fromTo("section.panel.bordeaux", 1, {y:  "100%"}, {y: "0%", ease: Linear.easeNone})  // in from right
-        .fromTo("section.panel.gray", 1, {x: "120%"}, {x: "0%", ease: Linear.easeNone}) // in from top
-        .fromTo("section.panel.blueviolet", 1, {x: "100%"}, {x: "0%", ease: Linear.easeNone})
-        .fromTo("section.panel.lightcoral", 1, {x: "100%", y: "100%"}, {x: "0%", ease: Linear.easeNone, y: "0%", ease: Linear.easeNone}); // in from top
+    //     .fromTo("section.panel#panel2", 1, {x: "100%"}, {x: "-100%", ease: Linear.easeNone})  // in from left
+    //     .fromTo("section.panel#panel3", 1, {x: "100%"}, {x: "0%", ease: Linear.easeNone})  // in from left
+    //     .fromTo("section.panel.bordeaux", 1, {y:  "100%"}, {y: "0%", ease: Linear.easeNone})  // in from right
+    //     .fromTo("section.panel.gray", 1, {x: "120%"}, {x: "0%", ease: Linear.easeNone}) // in from top
+    //     .fromTo("section.panel.blueviolet", 1, {x: "100%"}, {x: "0%", ease: Linear.easeNone})
+    //     .fromTo("section.panel.lightcoral", 1, {x: "100%", y: "100%"}, {x: "0%", ease: Linear.easeNone, y: "0%", ease: Linear.easeNone}); // in from top
 
-    // create scene to pin and link animation
-    new ScrollMagic.Scene({
-            triggerElement: "#pinContainer",
-            triggerHook: "onLeave",
-            duration: 9000
-        })
-        .setPin("#pinContainer")
-        .setTween(wipeAnimation)
-        .addIndicators() // add indicators (requires plugin)
-        .addTo(controller);
+    // // create scene to pin and link animation
+    // new ScrollMagic.Scene({
+    //         triggerElement: "#pinContainer",
+    //         triggerHook: "onLeave",
+    //         duration: 9000
+    //     })
+    //     .setPin("#pinContainer")
+    //     .setTween(wipeAnimation)
+    //     .addIndicators() // add indicators (requires plugin)
+    //     .addTo(controller);
 
 
 
@@ -54,6 +54,52 @@ $(function () { // wait for document ready
     //                 .addIndicators() // add indicators (requires plugin)
     //                 .addTo(controller);    
 
+    // function deslocarTela(offset, elemento, deslocaClassName) {
+    //     new ScrollMagic.Scene({
+    //         duration: 5000,    // the scene should last for a scroll distance of 100px
+    //         offset: offset    // start this scene after scrolling for 50px
+    //         })
+    //         .setTween(TweenMax.to(elemento, 1, {className: '+=' + deslocaClassName}))
+    //         .addIndicators({name: "tween css class"}) // add indicators (requires plugin)
+    //         .removeClassToggle(true)
+    //         .on('end', function (event) {
+    //             document.querySelector(elemento).style.transform = `translate(calc(100vw * -2),0)`
+    //         })
+    //         .addTo(controller);
+    // }
+
+    
+    function deslocarTela (offset, duration, posXInicial, posXFinal, posYInicial, posYFinal) {
+        new ScrollMagic.Scene({
+            // triggerElement: "#painel1",
+            // triggerHook: "onEnter", // show, when scrolled 10% into view
+                        duration: duration, // scroll duration
+                        offset: offset //scroll start
+                    })
+                    .setTween(new TimelineMax()
+                        .from(".largura", 0, {transform: `translate(${posXInicial},${posYInicial})`})
+                    .to(".largura", 1.5, {transform: `translate(${posXFinal},${posYFinal})`, delay: 0}))
+                    .addIndicators({name: "GSAP"}) // add indicators (requires plugin)
+                    // .on('end', function(){
+                    //     document.querySelector('.largura').style.transform = 'translate(calc(100vw * -2),0)'
+                    // })
+                    .addTo(controller);
+    }
+
+    new ScrollMagic.Scene({
+        duration: 700,    // the scene should last for a scroll distance of 100px
+        offset: 7500    // start this scene after scrolling for 50px
+        })
+        .setTween(TweenMax.to(".contato", 1, {className: "+=show-contato"}))
+        .addIndicators({name: "tween css class"}) // add indicators (requires plugin)
+        .removeClassToggle(true)
+        .addTo(controller);
+    
+    // deslocarTela(100, '.largura', "desloca-parte1")
+    // deslocarTela(5000, '.largura', "desloca-parte2")
+    deslocarTela(100, 5000, 0, '-200vw', 0, 0)
+    deslocarTela(5000, 1000, '-200vw', '-200vw', 0, '-100vh')
+    deslocarTela(6000, 2000, '-200vw', '-400vw', '-100vh', '-100vh')
 
 
         function movHorizontal (offset, posInicial, posFinal) {
