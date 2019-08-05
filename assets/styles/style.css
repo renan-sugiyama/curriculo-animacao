@@ -3,71 +3,7 @@ body {
 }
 
 
-/* telas */
-
-.tela_padrao {
-    background-image: url('../imgs/telas/tela_padrao.png');
-
-}
-
-.tela_buraco {
-    background-image: url('../imgs/telas/tela_buraco.png');
-}
-
-.tela_escura {
-    background-image: url('../imgs/telas/tela_escura.png');
-}
-
-.tela_tunel {
-    background-image: url('../imgs/telas/tela_tunel.png');
-}
-
-.desloca-parte1 {
-    transform: translate(calc(100vw * -2),0);
-}
-
-.desloca-parte2 {
-    transform: translate(0, -100vh);
-}
-/* 
-#global-container {
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    position: relative;
-    background-color: #333;
-    
-}
-
-.container-limit {    
-    width: calc(100% * 4);
-    height: 100vh;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-.panel {
-    height: 100%;
-    width: 100vw;
-    float: left;
-}
-
-.blue {
-    background-color: blue;
-}
-
-.red {
-    background-color: red;
-}
-
-.green {
-    background-color: green;
-}
-
-.yellow {
-    background-color: yellow;
-} */
-
+/* estrutura */
 .altura {
     height: calc(100vw * 7);
 }
@@ -99,10 +35,32 @@ body {
     opacity: 0;
 }
 
-.panel.show-contato {
-    opacity: 1;
+
+
+/* telas */
+.tela_padrao {
+    background-image: url('../imgs/telas/tela_padrao.png');
+
 }
 
+.tela_buraco {
+    background-image: url('../imgs/telas/tela_buraco.png');
+}
+
+.tela_escura {
+    background-image: url('../imgs/telas/tela_escura.png');
+}
+
+.tela-escura-efeito {
+    height: 100%;
+    width: 100%;
+    background-color: rgb(41, 47, 51);
+}
+
+
+.tela_tunel {
+    background-image: url('../imgs/telas/tela_tunel.png');
+}
 
 .panel {
     position: relative;
@@ -111,17 +69,23 @@ body {
     float: left;
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: left;    
 }
 
+
+/* elementos da tela */
 .personagem {
-    width: 100px;
-    height: 100px;
-    background-color: red;
+    width: 200px;
+    height: 200px;
     position: fixed;
-    top: 80%;
+    top: 70%;
     left: 10%;
     z-index: 9999;
+}
+
+img#personagem  {
+    width: 100%;
+    height: 100%;
 }
 
 .sol img, .lua img {
@@ -132,43 +96,16 @@ body {
     left: 5%;
     z-index: 99;
 }
-
-.personagem-movimento {
-    left: 40%;
+.tijolo {
+    background-image: url('../imgs/elementos_tela/tijolo.jpg');
+    
+    background-repeat: repeat;
+    background-size: contain;
 }
 
-.personagem-up {
-    top: 60%;
-}
-
-.personagem-down {
-    top: 80%;
-}
-
-.hidePersonagem {
-    opacity: 0;
-    z-index: -1;
-}
-
-#target {
-    opacity: 0;
-    position: absolute !important;
-}
-
-#target.showTarget {
-    opacity: 1;
-}
-
-#target img {
-    width: 90px;
-    height: auto;
-}
-
-/* elementos da tela 2 */
 .parte1 .tijolo {
     height: 80px;
     width: 80px;
-    background-color: blue;
     position: absolute;
 }
 
@@ -213,3 +150,35 @@ body {
     height: auto;
     width: 80px;
 }
+
+
+/* animação */
+.panel.show-contato {
+    opacity: 1;
+}
+
+
+.hidePersonagem {
+    opacity: 0;
+    z-index: -1;
+}
+
+#target {
+    opacity: 0;
+    position: absolute !important;
+}
+
+#target.showTarget {
+    opacity: 1;
+}
+
+#target img {
+    width: 90px;
+    height: auto;
+}
+
+.tela-escura-efeito-hide {
+    background-color: transparent;
+}
+
+
