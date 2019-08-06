@@ -65,59 +65,17 @@ $(function () { // wait for document ready
                             .addTo(controller);
     }
 
-    function toggleClass (offset, duration, target, className) {
+    function toggleClass (offset, duration, target, className, add = '+') {
         new ScrollMagic.Scene({
             duration: duration,    // the scene should last for a scroll distance of 100px
             offset: offset    // start this scene after scrolling for 50px
             })
-            .setTween(TweenMax.to(target, 1, {className: "+=" + className}))
+            .setTween(TweenMax.to(target, 1, {className: `${add}=` + className}))
             .addIndicators({name: "tween css class"}) // add indicators (requires plugin)
             .removeClassToggle(true)
             .addTo(controller);
     }
     
-
-
-
-
-
-
-    //teste email desenho
-    var flightpath = {
-        entry : {
-            curviness: 1.25,
-            autoRotate: true,
-            values: [
-                {x:0, y:0},
-                {x:$(window).width()*1.2 - $(window).width(), y:0}, 
-                {x:$(window).width()*1.5 - $(window).width(), y:-80}, 
-                {x:$(window).width() - $(window).width()/1.2, y:0},
-                {x:0, y:$(window).height()-$(window).height()/2},
-                {x:$(window).width() - $(window).width()/1.1, y:$(window).height()/1.5-$(window).height()},
-                {x:$(window).width() - $(window).width()/2, y:-$(window).height()-800},
-                {x:$(window).width(), y:-$(window).height()-200}
-            ]
-        }
-    };
-    
-
-    
-    // create tween
-    var emailtween = new TimelineMax()
-        .add(TweenMax.to($("#plane"), 1, {css:{bezier:flightpath.entry}, ease:Power1.easeInOut}));
-
-    // build scene
-    var scene = new ScrollMagic.Scene({
-        duration: 2000,    // the scene should last for a scroll distance of 100px
-        offset: 9000    // start this scene after scrolling for 50px
-        })
-                    .setPin("#target")
-                    .setTween(emailtween)
-                    .addIndicators('teste') // add indicators (requires plugin)
-                    .addTo(controller);
-                    
-
-
 
 // anima personagem
                    
@@ -228,7 +186,7 @@ $(function () { // wait for document ready
 
     deslocarTela(100, 5000, 0, '-200vw', 0, 0)
     deslocarTela(5000, 1000, '-200vw', '-200vw', 0, '-100vh')
-    deslocarTela(6700, 4000, '-200vw', '-400vw', '-100vh', '-100vh')
+    deslocarTela(6700, 5000, '-200vw', '-500vw', '-100vh', '-100vh')
     toggleClass(5400, 700, ".tela-escura-efeito", 'tela-escura-efeito-hide')
     //toggleClass(20000, 700, ".contato", 'show-contato')
     toggleClass(9000, 100, "#target", 'showTarget')
@@ -265,6 +223,7 @@ $(function () { // wait for document ready
     movVertical(8000, '10%', '70%')
 
     toggleClass(8400, 100, ".personagem", 'hidePersonagem')
+    toggleClass(8900, 100, ".personagem", 'hidePersonagem', '-')
 
     animaSprite(0, 500)
     animaSprite(500, 500)
