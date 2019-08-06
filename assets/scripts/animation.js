@@ -185,37 +185,54 @@ $(function () { // wait for document ready
 
     deslocarTela(100, 5000, 0, '-200vw')
     movHorizontal(0, '10%', '25%')
+    toggleClass(0, 1, ".sol img", 'show')
     toggleClass(0, 100, ".panel1 .text-intro", 'text-intro-anima')
     toggleClass(600, 100, ".panel2 .text-intro", 'text-intro-anima')
 
+    animaSprite(0, 1300)
+    animaJumpSprite(1300, 200)
+    
     movVertical(1300, '70%', '50%')
     movVertical(1500, '50%', '70%')
     toggleClass(1500, 50, ".panel2 .tijolo1", 'html5Skill')
     
+    animaSprite(1700, 1800)
+    animaJumpSprite(1800, 200)
+
     movVertical(1800, '70%', '50%')
     movVertical(2000, '50%', '70%')
     toggleClass(2000, 50, ".panel2 .tijolo2", 'css3Skill')
+
+    animaSprite(2200, 2300)
+    animaJumpSprite(2300, 200)
 
     movVertical(2300, '70%', '50%')
     movVertical(2500, '50%', '70%')
     toggleClass(2500, 50, ".panel2 .tijolo3", 'javascriptSkill')
 
+    animaSprite(2700, 3800)
+    animaJumpSprite(3800, 200)
+
     movVertical(3800, '70%', '50%')
     movVertical(4700, '50%', '70%')
     
+    toggleClass(5000, 1, '.sol img', 'hide')
     toggleClass(5000, 1, '.panel3-escurecer', 'escurecerPainel-1')
     toggleClass(5100, 1, '.panel3-escurecer', 'escurecerPainel-2')
     toggleClass(5200, 1, '.panel3-escurecer', 'escurecerPainel-3')
     toggleClass(5300, 1, '.panel3-escurecer', 'escurecerPainel-4')
     toggleClass(5400, 1, '.panel3-escurecer', 'escurecerPainel-5')
-
-
+    
     movVertical(5000, '50%', '80%')
-    toggleClass(5000, 200, ".personagem", 'hidePersonagem')
+    toggleClass(5000, 200, ".personagem", 'hide')
     movVertical(5400, '80%', '0%')
-
+    
     deslocarTela(5500, 5000, '-200vw', '-300vw')
-
+    toggleClass(11000, 1, '.lua img', 'show')
+    
+    movHorizontal(11000, '25%', '15%')
+    toggleClass(11500, 100, ".panel4 .text-intro", 'text-intro-anima')
+    
     toggleClass(11000, 1, '.tela-escura-efeito', 'escurecerPainel-5')
     toggleClass(11300, 1, '.tela-escura-efeito', 'escurecerPainel-4')
     toggleClass(11600, 1, '.tela-escura-efeito', 'escurecerPainel-3')
@@ -229,26 +246,41 @@ $(function () { // wait for document ready
     toggleClass(12200, 1, '.tela-escura-efeito', 'escurecerPainel-2', '-')
     toggleClass(12500, 1, '.tela-escura-efeito', 'escurecerPainel-1', '-')
 
-    movHorizontal(11000, '25%', '15%')
-    
     movVertical(12200, '0%', '20%')
     movVertical(12400, '20%', '40%')
     movVertical(12600, '40%', '70%')
-    toggleClass(12000, 100, ".personagem", 'hidePersonagem', '-')
+    toggleClass(12000, 100, ".personagem", 'hide', '-')
 
     deslocarTela(13000, 15000, '-300vw', '-600vw')
 
-    movVertical(13100, '70%', '58%')
+    animaSprite(13000, 13100)
+    animaJumpSprite(13300, 500)
+
+    movVertical(13300, '70%', '58%')
+
+    animaJumpSprite(13700, 600)
+
     movVertical(13700, '58%', '40%')
     toggleClass(13900, 200, ".panel4 .tijolo1", 'frameSkill-hide')
+
+    animaJumpSprite(14300, 600)
+
     movVertical(14300, '40%', '20%')
     toggleClass(14500, 200, ".panel4 .tijolo2", 'frameSkill-hide')
+
+    animaJumpSprite(15000, 1000)
+
     movVertical(15000, '20%', '10%')
     toggleClass(15200, 200, ".panel4 .tijolo3", 'frameSkill-hide')
+
     movVertical(15800, '10%', '40%')
     movVertical(16000, '40%', '70%')
+    animaSprite(16300, 1000)
+    animaSprite(17300, 1000)
+    animaSprite(18300, 1000)
+    
 
-    toggleClass(17600, 200, ".personagem", 'hidePersonagem')
+    toggleClass(18000, 200, ".personagem", 'hide')
 
     toggleClass(18500, 100, ".panel6 .text-intro", 'text-intro-anima')
     toggleClass(18000, 1, ".portfolio-card-1", 'rodaCartao')
@@ -257,15 +289,17 @@ $(function () { // wait for document ready
     toggleClass(19200, 1, ".portfolio-card-4", 'rodaCartao')
     movHorizontal(25500, "15%", '110%', 3000)
 
-    toggleClass(25600, 100, ".personagem", 'hidePersonagem', '-')
+    toggleClass(25600, 100, ".personagem", 'hide', '-')
+    animaSprite(25700, 1000)
+    animaSprite(26700, 1000)
+    animaSprite(27700, 1000)
     toggleClass(26000, 100, 'img[alt="whatsapp"]', 'show')
     toggleClass(26100, 100, 'img[alt="linkedin"]', 'show')
     toggleClass(26200, 100, 'img[alt="github"]', 'show')
     toggleClass(26300, 100, 'img[alt="facebook"]', 'show')
     toggleClass(26500, 100, '.form-contato', 'showForm')
 
-    animaSprite(0, 3450)
-    animaJumpSprite(7600, 400)
+    
     
 
 
