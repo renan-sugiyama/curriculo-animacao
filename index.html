@@ -22,8 +22,8 @@
                 <div class="lua">
                         <img src="./assets/imgs/elementos_tela/moon.png" alt="lua">
                 </div>
-                <div class="largura parte1">
-                    <section class="panel tela_padrao " style="background-color: blue" id="panel1">
+                <div class="largura">
+                    <section class="panel panel1" style="background-color: blue" id="panel1">
                         <b>ONE</b>
                         <div class="text-intro">
                             <h1>
@@ -31,7 +31,7 @@
                             </h1>
                         </div>
                     </section>
-                    <section class="panel tela_padrao" style="background-color: turquoise" id="panel2">
+                    <section class="panel panel2" style="background-color: turquoise" id="panel2">
                         <b>TWO</b>
                         <div class="text-intro">
                             <h1>
@@ -42,19 +42,12 @@
                         <div class="tijolo tijolo2"></div>
                         <div class="tijolo tijolo3"></div>
                     </section>
-                    <section class="panel tela_buraco" style="background-color: greenyellow" id="panel3">
-                        <b>THREE</b>
+                    <section class="panel panel3" style="background-color: greenyellow" id="panel3">
+                        <div class="panel3-escurecer">
+                            <div class="buraco"></div>
+                        </div>
                     </section>
-                </div>
-
-                <div class="largura parte2">
-                    <section class="panel tela_padrao" style="background-color: turquoise" id="panel2">
-                        <b>TWO</b>
-                    </section>
-                    <section class="panel green" style="background-color: greenyellow" id="panel3">
-                        <b>THREE</b>
-                    </section>
-                    <section class="panel tela_escura" style="background-color: yellow">
+                    <section class="panel tela_escura panel4" style="background-color: yellow">
                         <div class="tela-escura-efeito">
                             <b>FOUR</b>
                             <div class="text-intro">
@@ -73,38 +66,45 @@
                             </div>
                         </div>
                     </section>
-                    <section class="panel tela_tunel" style="background-color: gray">
+                    <section class="panel panel5" style="background-color: gray">
                         <b>FIVE</b>
                         <div class="star">
                             <img src="./assets/imgs/elementos_tela/star.png" alt="star">
                         </div>
+                        <div class="tunel"></div>
                     </section>
-                    <section class="panel portfolio tela_portfolio" style="background-color: white">
+                    <section class="panel portfolio tela_portfolio panel6" style="background-color: white">
                         <b>SIX</b>
+                        <div class="text-intro">
+                            <h1>
+                                Portfólio
+                            </h1>
+                        </div>
                         <div class="portfolio-section">
                             <div class="portfolio-galeria">
-                                <div class="portfolio-card">
+                                <div class="portfolio-card portfolio-card-1">
                                     <img src="./assets/imgs/portfolio/exceltri.png" alt="exceltri">
                                 </div>
     
-                                <div class="portfolio-card">
+                                <div class="portfolio-card portfolio-card-2">
                                     <img src="./assets/imgs/portfolio/devready.jpg" alt="devready">
                                 </div>
     
-                                <div class="portfolio-card">
+                                <div class="portfolio-card portfolio-card-3">
                                     <img src="./assets/imgs/portfolio/lubbu.png" alt="lubbu">
                                 </div>
     
-                                <div class="portfolio-card">
-                                    <img src="./assets/imgs/portfolio/receitas.png" alt="receitas">
+                                <div class="portfolio-card portfolio-card-4">
+                                    <img src="./assets/imgs/portfolio/renan-curriculo.png" alt="site curriculo">
                                 </div>
                             </div>
                         </div>
+                        <div class="tunel-extenso"></div>
                     </section>
-                    <section class="panel blueviolet tela_contato" style="background-color: blueviolet">
+                    <section class="panel panel7" style="background-color: blueviolet">
                         <b>SEVEN</b>
                         <div class="card-contato-form">
-                            <form onsubmit="return false">
+                            <form class="form-contato" onsubmit="return false">
                                 <div class="form-group inputName">
                                     <input type="text" class="form-control" id="name" name="name" required>
                                 </div>
@@ -134,15 +134,9 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="tunel-reverso"></div>
                     </section>
                 </div>
-
-                
-                <!-- <section class="panel contato" style="background-color: indianred">
-                    <b>Contato</b>
-                </section> -->
-                   
-
 
             </div>
         </div>
