@@ -132,27 +132,45 @@ img#personagem  {
 }
 
 .parte2 .tijolo1 {
-    left: 35%;
+    left: 40%;
     top: 84%;
 }
 
 .parte2 .tijolo2 {
-    left: 58%;
+    left: 65%;
     top: 64%;
 }
 
 .parte2 .tijolo3 {
-    left: 80%;
+    left: 88%;
     top: 44%;
+}
+
+.parte2 .tijolo img{
+    width: 80px;
+    height: auto;
+    position: absolute;
+    left: 10%;
+    top: -100px;
+    animation: spin 1s linear infinite;
+    
 }
 
 .star img{
     height: auto;
     width: 80px;
+    position: absolute;
+    top: 20%;
+    left: 20%;
+}
+
+.lua img{
+    animation: luaesol 6s alternate infinite ease-in;
 }
 
 
 /* animação */
+
 .panel.show-contato {
     opacity: 1;
 }
@@ -160,7 +178,6 @@ img#personagem  {
 
 .hidePersonagem {
     opacity: 0;
-    z-index: -1;
 }
 
 #target {
@@ -181,4 +198,73 @@ img#personagem  {
     background-color: transparent;
 }
 
+.html5Skill {
+    background-image: url('../imgs/elementos_tela/html5.png');
+    background-repeat: no-repeat;
+}
 
+.css3Skill {
+    background-image: url('../imgs/elementos_tela/css3.png');
+    background-repeat: no-repeat;
+}
+
+.javascriptSkill {
+    background-image: url('../imgs/elementos_tela/javascript.png');
+    background-repeat: no-repeat;
+}
+
+.frameSkill-hide {
+    transform: translate(0, -100%);
+    opacity: 0;
+}
+
+
+
+
+@-ms-keyframes spin {
+    from { -ms-transform: rotateY(0deg); }
+    to { -ms-transform: rotateY(360deg); }
+}
+@-moz-keyframes spin {
+    from { -moz-transform: rotateY(0deg); }
+    to { -moz-transform: rotateY(360deg); }
+}
+@-webkit-keyframes spin {
+    from { -webkit-transform: rotateY(0deg); }
+    to { -webkit-transform: rotateY(360deg); }
+}
+@keyframes spin {
+    from {
+        transform:rotateY(0deg);
+    }
+    to {
+        transform:rotateY(360deg);
+    }
+}
+
+
+
+
+
+
+
+@-ms-keyframes luaesol {
+    from { -ms-transform: scale(0.8)}
+    to { -ms-transform: scale(1.2)}
+}
+@-moz-keyframes luaesol {
+    from { -moz-transform: scale(0.8)}
+    to { -moz-transform: scale(1.2)}
+}
+@-webkit-keyframes luaesol {
+    from { -webkit-transform: scale(0.8)}
+    to { -webkit-transform: scale(1.2)}
+}
+@keyframes luaesol {
+    from {
+        transform:scale(0.8) rotate(30deg);
+    }
+    to {
+        transform:scale(1.2) rotate(90deg);
+    }
+}
