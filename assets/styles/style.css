@@ -199,7 +199,10 @@ img#personagem  {
     top: 10%;
     left: 5%;
     z-index: 99;
+    opacity: 0;
+    transition: all 2s ease;
 }
+
 .tijolo {
     background-image: url('../imgs/elementos_tela/tijolo.jpg');
     
@@ -314,7 +317,7 @@ img#personagem  {
 }
 
 
-.lua img{
+.sol img, .lua img{
     animation: luaesol 6s alternate infinite ease-in;
 }
 
@@ -356,9 +359,6 @@ img#personagem  {
     opacity: 1;
 }
 
-.hidePersonagem {
-    opacity: 0;
-}
 
 
 /* .tela-escura-efeito-hide {
@@ -416,6 +416,11 @@ img#personagem  {
 .show {
     opacity: 1 !important;
 }
+
+.hide {
+    opacity: 0 !important;
+}
+
 
 .showForm {
     opacity: 1 !important;
