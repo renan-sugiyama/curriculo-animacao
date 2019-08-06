@@ -11,7 +11,7 @@ $(function () { // wait for document ready
     var controller = new ScrollMagic.Controller();
     // var controller = new ScrollMagic.Controller({vertical: false});
  
-    function deslocarTela (offset, duration, posXInicial, posXFinal, posYInicial, posYFinal) {
+    function deslocarTela (offset, duration, posXInicial, posXFinal) {
         new ScrollMagic.Scene({
             // triggerElement: "#painel1",
             // triggerHook: "onEnter", // show, when scrolled 10% into view
@@ -19,20 +19,21 @@ $(function () { // wait for document ready
                         offset: offset //scroll start
                     })
                     .setTween(new TimelineMax()
-                        .from(".largura", 0, {transform: `translate(${posXInicial},${posYInicial})`})
-                    .to(".largura", 1.5, {transform: `translate(${posXFinal},${posYFinal})`, delay: 0}))
+                    .from(".largura", 0, {transform: `translate(${posXInicial}, 0)`})
+                    .to(".largura", 1.5, {transform: `translate(${posXFinal},0)`, delay: 0}))
                     .addIndicators({name: "GSAP"}) // add indicators (requires plugin)
-                    // .on('end', function(){
-                    //     document.querySelector('.largura').style.transform = `translate(calc(${posXInicial}),${posYInicial})`
-                    // })
+                    .on('start', function(){
+                        document.querySelector('.largura').style.transform = `translate(${posXInicial},0)`
+                    })
+                    
                     .addTo(controller);
     }
 
-    function movHorizontal (offset, posInicial, posFinal) {
+    function movHorizontal (offset, posInicial, posFinal, duration = 1000) {
         new ScrollMagic.Scene({
             // triggerElement: "#painel1",
             // triggerHook: "onEnter", // show, when scrolled 10% into view
-                        duration: 1000, // scroll duration
+                        duration: duration, // scroll duration
                         offset: offset //scroll start
                     })
                     .setTween(new TimelineMax()
@@ -182,67 +183,90 @@ $(function () { // wait for document ready
         .addTo(controller);
     }
 
+    deslocarTela(100, 5000, 0, '-200vw')
+    movHorizontal(0, '10%', '25%')
+    toggleClass(0, 100, ".panel1 .text-intro", 'text-intro-anima')
+    toggleClass(600, 100, ".panel2 .text-intro", 'text-intro-anima')
 
-
-    deslocarTela(100, 5000, 0, '-200vw', 0, 0)
-    deslocarTela(5000, 1000, '-200vw', '-200vw', 0, '-100vh')
-    deslocarTela(6700, 5000, '-200vw', '-500vw', '-100vh', '-100vh')
-    toggleClass(5400, 700, ".tela-escura-efeito", 'tela-escura-efeito-hide')
-    //toggleClass(20000, 700, ".contato", 'show-contato')
-    toggleClass(9000, 100, "#target", 'showTarget')
+    movVertical(1300, '70%', '50%')
+    movVertical(1500, '50%', '70%')
+    toggleClass(1500, 50, ".panel2 .tijolo1", 'html5Skill')
     
-    movVertical(1200, '70%', '50%')
-    movVertical(1400, '50%', '70%')
-    toggleClass(1400, 100, ".parte1 .tijolo1", 'html5Skill')
+    movVertical(1800, '70%', '50%')
+    movVertical(2000, '50%', '70%')
+    toggleClass(2000, 50, ".panel2 .tijolo2", 'css3Skill')
+
+    movVertical(2300, '70%', '50%')
+    movVertical(2500, '50%', '70%')
+    toggleClass(2500, 50, ".panel2 .tijolo3", 'javascriptSkill')
+
+    movVertical(3800, '70%', '50%')
+    movVertical(4700, '50%', '70%')
     
-    movVertical(1700, '70%', '50%')
-    movVertical(1900, '50%', '70%')
-    toggleClass(1900, 100, ".parte1 .tijolo2", 'css3Skill')
+    toggleClass(5000, 1, '.panel3-escurecer', 'escurecerPainel-1')
+    toggleClass(5100, 1, '.panel3-escurecer', 'escurecerPainel-2')
+    toggleClass(5200, 1, '.panel3-escurecer', 'escurecerPainel-3')
+    toggleClass(5300, 1, '.panel3-escurecer', 'escurecerPainel-4')
+    toggleClass(5400, 1, '.panel3-escurecer', 'escurecerPainel-5')
 
-    movVertical(2200, '70%', '50%')
-    movVertical(2400, '50%', '70%')
-    toggleClass(2400, 100, ".parte1 .tijolo3", 'javascriptSkill')
 
-    movVertical(3700, '70%', '50%')
-    movVertical(4400, '50%', '70%')
-                
+    movVertical(5000, '50%', '80%')
+    toggleClass(5000, 200, ".personagem", 'hidePersonagem')
+    movVertical(5400, '80%', '0%')
+
+    deslocarTela(5500, 5000, '-200vw', '-300vw')
+
+    toggleClass(11000, 1, '.tela-escura-efeito', 'escurecerPainel-5')
+    toggleClass(11300, 1, '.tela-escura-efeito', 'escurecerPainel-4')
+    toggleClass(11600, 1, '.tela-escura-efeito', 'escurecerPainel-3')
+    toggleClass(11900, 1, '.tela-escura-efeito', 'escurecerPainel-2')
+    toggleClass(12200, 1, '.tela-escura-efeito', 'escurecerPainel-1')
+    toggleClass(12500, 1, '.tela-escura-efeito', 'escurecerPainel-0')
+
+    toggleClass(11300, 1, '.tela-escura-efeito', 'escurecerPainel-5', '-')
+    toggleClass(11600, 1, '.tela-escura-efeito', 'escurecerPainel-4', '-')
+    toggleClass(11900, 1, '.tela-escura-efeito', 'escurecerPainel-3', '-')
+    toggleClass(12200, 1, '.tela-escura-efeito', 'escurecerPainel-2', '-')
+    toggleClass(12500, 1, '.tela-escura-efeito', 'escurecerPainel-1', '-')
+
+    movHorizontal(11000, '25%', '15%')
     
-    movVertical(6700, '70%', '60%')
-    toggleClass(2400, 100, ".parte1 .tijolo3", 'javascriptSkill')
-    
-    movVertical(7000, '60%', '40%')
-    toggleClass(7050, 200, ".parte2 .tijolo1", 'frameSkill-hide')
+    movVertical(12200, '0%', '20%')
+    movVertical(12400, '20%', '40%')
+    movVertical(12600, '40%', '70%')
+    toggleClass(12000, 100, ".personagem", 'hidePersonagem', '-')
 
-    movVertical(7300, '40%', '20%')
-    toggleClass(7350, 200, ".parte2 .tijolo2", 'frameSkill-hide')
+    deslocarTela(13000, 15000, '-300vw', '-600vw')
 
-    movVertical(7600, '20%', '10%')
-    toggleClass(7650, 200, ".parte2 .tijolo3", 'frameSkill-hide')
+    movVertical(13100, '70%', '58%')
+    movVertical(13700, '58%', '40%')
+    toggleClass(13900, 200, ".panel4 .tijolo1", 'frameSkill-hide')
+    movVertical(14300, '40%', '20%')
+    toggleClass(14500, 200, ".panel4 .tijolo2", 'frameSkill-hide')
+    movVertical(15000, '20%', '10%')
+    toggleClass(15200, 200, ".panel4 .tijolo3", 'frameSkill-hide')
+    movVertical(15800, '10%', '40%')
+    movVertical(16000, '40%', '70%')
 
-    movHorizontal(7800, '10%', '50%')
-    movVertical(8000, '10%', '70%')
+    toggleClass(17600, 200, ".personagem", 'hidePersonagem')
 
-    toggleClass(8400, 100, ".personagem", 'hidePersonagem')
-    toggleClass(8900, 100, ".personagem", 'hidePersonagem', '-')
+    toggleClass(18500, 100, ".panel6 .text-intro", 'text-intro-anima')
+    toggleClass(18000, 1, ".portfolio-card-1", 'rodaCartao')
+    toggleClass(18400, 1, ".portfolio-card-2", 'rodaCartao')
+    toggleClass(18800, 1, ".portfolio-card-3", 'rodaCartao')
+    toggleClass(19200, 1, ".portfolio-card-4", 'rodaCartao')
+    movHorizontal(25500, "15%", '110%', 3000)
 
-    animaSprite(0, 500)
-    animaSprite(500, 500)
-    animaSprite(1000, 200)
-    animaJumpSprite(1200, 400)
-    animaSprite(1600, 100)
-    animaJumpSprite(1700, 400)
-    animaSprite(2100, 100)
-    animaJumpSprite(2200, 400)
-    animaSprite(2500, 500)
-    animaSprite(3000, 500)
-    animaSprite(3500, 200)
-    animaJumpSprite(3700, 1300)
-    animaSprite(6500, 200)
-    animaJumpSprite(6700, 250)
-    animaJumpSprite(7000, 250)
-    animaJumpSprite(7300, 250)
+    toggleClass(25600, 100, ".personagem", 'hidePersonagem', '-')
+    toggleClass(26000, 100, 'img[alt="whatsapp"]', 'show')
+    toggleClass(26100, 100, 'img[alt="linkedin"]', 'show')
+    toggleClass(26200, 100, 'img[alt="github"]', 'show')
+    toggleClass(26300, 100, 'img[alt="facebook"]', 'show')
+    toggleClass(26500, 100, '.form-contato', 'showForm')
+
+    animaSprite(0, 3450)
     animaJumpSprite(7600, 400)
-    animaSprite(8200, 500)
+    
 
 
         
