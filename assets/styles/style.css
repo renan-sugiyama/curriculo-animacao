@@ -10,7 +10,6 @@ button {
     cursor: pointer;
 }
 
-
 /* estrutura */
 .altura {
     height: calc(100vw * 7);
@@ -27,7 +26,6 @@ button {
     width: calc(100vw * 7);
 }
 
-
 .panel.contato {
     position: absolute;
     top: 0;
@@ -36,8 +34,6 @@ button {
     height: 100vh;
     opacity: 0;
 }
-
-
 
 /* telas */
 .panel1, .panel2, .panel3 {
@@ -66,14 +62,11 @@ button {
     box-shadow: 0 3px 6px 3px rgba(30, 30,30, 0.3);
 }
 
-
 .tela-escura-efeito {
     height: 100%;
     width: 100%;
     background-color: #000;
 }
-
-
 
 .panel {
     position: relative;
@@ -85,9 +78,7 @@ button {
     background-position: center center;    
 }
 
-
 /* formulario */
-
 .card-contato-form {
     width: 40%;
     height: 100%;
@@ -102,6 +93,7 @@ form {
     transform: translate(30%, 30%);
     transition: all 0.5s linear;
 }
+
 form button[type="submit"] {
     border-radius: 10px;
     border: none;
@@ -109,7 +101,6 @@ form button[type="submit"] {
     background-color: #007bff;
     color: white;
 }
-
 
 .form-group {
     display: flex;
@@ -137,12 +128,10 @@ form button[type="submit"] {
     top: 5px;
     left: 100%;
     height: 20px;
-    
     transform: translate(-moz-calc(100% - 15px), 0);
     transform: translate(-webkit-calc(100% - 15px), 0);
     transform: translate(-o-calc(100% - 15px), 0);
     transform: translate( calc(-100% - 15px), 0);   
-    
 }
 
 .inputName.form-group::after {
@@ -161,13 +150,11 @@ form button[type="submit"] {
     outline: none;
     background-color: rgba(130, 180, 230, .5);
     color: white;
-
 }
 
 .form-group label {
     flex: 1;
 }
-
 
 .outros-contatos {
     display: flex;
@@ -188,9 +175,6 @@ form button[type="submit"] {
     height: auto;
     opacity: 0;
 }
-
-
-
 
 /* elementos da tela */
 .personagem {
@@ -416,8 +400,6 @@ img#personagem  {
     }
   }
 
-  
-
 /* alerta para contato - email */
 .alert {
     position: absolute;
@@ -461,12 +443,6 @@ img#personagem  {
     transform: translate(0, 0);
     opacity: 1;
 }
-
-
-
-/* .tela-escura-efeito-hide {
-    background-color: transparent;
-} */
 
 .html5Skill {
     background-image: url('../imgs/elementos_tela/html5.png');
@@ -524,14 +500,10 @@ img#personagem  {
     opacity: 0 !important;
 }
 
-
 .showForm {
     opacity: 1 !important;
     transform: translate(0, 0);
 }
-
-
-
 
 
 @-ms-keyframes spin {
@@ -554,10 +526,6 @@ img#personagem  {
         transform:rotateY(360deg);
     }
 }
-
-
-
-
 
 
 @-ms-keyframes spinCartao {
@@ -588,12 +556,6 @@ img#personagem  {
         opacity: 1;
     }
 }
-
-
-
-
-
-
 
 @-ms-keyframes luaesol {
     from { -ms-transform: scale(0.8)}

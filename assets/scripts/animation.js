@@ -1,49 +1,33 @@
-// anime({
-//     targets: 'div',
-//     translateX: 250,
-//     rotate: '1turn',
-//     backgroundColor: '#FFF',
-//     duration: 800
-//   });
-
 $(function () { // wait for document ready
     // init
     var controller = new ScrollMagic.Controller();
-    // var controller = new ScrollMagic.Controller({vertical: false});
- 
+    
     function deslocarTela (offset, duration, posXInicial, posXFinal) {
         new ScrollMagic.Scene({
-            // triggerElement: "#painel1",
-            // triggerHook: "onEnter", // show, when scrolled 10% into view
-                        duration: duration, // scroll duration
-                        offset: offset //scroll start
-                    })
-                    .setTween(new TimelineMax()
-                    .from(".largura", 0, {transform: `translate(${posXInicial}, 0)`})
-                    .to(".largura", 1.5, {transform: `translate(${posXFinal},0)`, delay: 0}))
-                    .addIndicators({name: "GSAP"}) // add indicators (requires plugin)
-                    .on('start', function(){
-                        document.querySelector('.largura').style.transform = `translate(${posXInicial},0)`
-                    })
-                    
-                    .addTo(controller);
+                duration: duration, // scroll duration
+                offset: offset //scroll start
+            })
+            .setTween(new TimelineMax()
+            .from(".largura", 0, {transform: `translate(${posXInicial}, 0)`})
+            .to(".largura", 1.5, {transform: `translate(${posXFinal},0)`, delay: 0}))
+            .on('start', function(){
+                document.querySelector('.largura').style.transform = `translate(${posXInicial},0)`
+            })
+            .addTo(controller);
     }
 
     function movHorizontal (offset, posInicial, posFinal, duration = 1000) {
         new ScrollMagic.Scene({
-            // triggerElement: "#painel1",
-            // triggerHook: "onEnter", // show, when scrolled 10% into view
-                        duration: duration, // scroll duration
-                        offset: offset //scroll start
-                    })
-                    .setTween(new TimelineMax()
-                        .from(".personagem", 0, {left: posInicial})
-                        .to(".personagem", 1.5, {left: posFinal, delay: 0}))
-                    .addIndicators({name: "GSAP"}) // add indicators (requires plugin)
-                    .on('start', function(){
-                        document.querySelector('.personagem').style.left = posInicial;
-                    })
-                    .addTo(controller);
+                duration: duration, // scroll duration
+                offset: offset //scroll start
+            })
+            .setTween(new TimelineMax()
+                .from(".personagem", 0, {left: posInicial})
+                .to(".personagem", 1.5, {left: posFinal, delay: 0}))
+            .on('start', function(){
+                document.querySelector('.personagem').style.left = posInicial;
+            })
+            .addTo(controller);
     }
 
     function movVertical (offset, posInicial, posFinal) {
@@ -52,34 +36,28 @@ $(function () { // wait for document ready
         .to(".personagem", 1.5, {top: posFinal, delay: 0})
 
         new ScrollMagic.Scene({
-                    // triggerElement: "#painel1",
-                    // triggerHook: "onEnter", // show, when scrolled 10% into view
-                                duration: 200, // scroll duration
-                                offset: offset //scroll start
-                            })
-                            .setTween(myTween)
-                            .addIndicators({name: "GSAP sobe"}) // add indicators (requires plugin)
-                            .on('start', function (event) {
-                                document.querySelector('.personagem').style.top = posInicial;
-                                console.log(document.querySelector('.personagem').style.top)
-                            })
-                            .addTo(controller);
+                duration: 200, // scroll duration
+                offset: offset //scroll start
+            })
+            .setTween(myTween)
+            .on('start', function (event) {
+                document.querySelector('.personagem').style.top = posInicial;
+            })
+            .addTo(controller);
     }
 
     function toggleClass (offset, duration, target, className, add = '+') {
         new ScrollMagic.Scene({
-            duration: duration,    // the scene should last for a scroll distance of 100px
-            offset: offset    // start this scene after scrolling for 50px
+                duration: duration,    // the scene should last for a scroll distance of 100px
+                offset: offset    // start this scene after scrolling for 50px
             })
             .setTween(TweenMax.to(target, 1, {className: `${add}=` + className}))
-            .addIndicators({name: "tween css class"}) // add indicators (requires plugin)
             .removeClassToggle(true)
             .addTo(controller);
     }
     
 
-// anima personagem
-                   
+// anima personagem            
     var imagesRun = [
         "./assets/imgs/sprites/personagem/Run1.png",
         "./assets/imgs/sprites/personagem/Run2.png",
@@ -115,7 +93,6 @@ $(function () { // wait for document ready
         "./assets/imgs/sprites/personagem/Jump13.png",
         "./assets/imgs/sprites/personagem/Jump14.png",
         "./assets/imgs/sprites/personagem/Jump15.png",
-        
     ];
             
     // TweenMax can tween any property of any object. We use this object to cycle through the array
@@ -126,7 +103,7 @@ $(function () { // wait for document ready
         {
             curImg: imagesRun.length - 1,	// animate propery curImg to number of imagesRun
             roundProps: "curImg",				// only integers so it can be used as an array index
-            repeat: 1,									// repeat 3 times
+            repeat: 1,									// repeat 1 times
             immediateRender: true,			// load first image automatically
             ease: Linear.easeNone,			// show every image the same ammount of time
             onUpdate: function () {
@@ -134,13 +111,6 @@ $(function () { // wait for document ready
             }
         }
     );
-
-
-
-
-
-
-    
             
     // TweenMax can tween any property of any object. We use this object to cycle through the array
     var obj2 = {curImg: 0};
@@ -158,9 +128,6 @@ $(function () { // wait for document ready
             }
         }
     );
-
-
-
    
     // build scene
     function animaSprite (offset, duration){
@@ -169,7 +136,6 @@ $(function () { // wait for document ready
             duration: duration  
         })
         .setTween(personagemtween)
-        .addIndicators() // add indicators (requires plugin)
         .addTo(controller);
     }
 
@@ -179,7 +145,6 @@ $(function () { // wait for document ready
             duration: duration  
         })
         .setTween(personagemJumptween)
-        .addIndicators() // add indicators (requires plugin)
         .addTo(controller);
     }
 
@@ -278,7 +243,6 @@ $(function () { // wait for document ready
     animaSprite(16300, 1000)
     animaSprite(17300, 1000)
     animaSprite(18300, 1000)
-    
 
     toggleClass(18000, 200, ".personagem", 'hide')
 
@@ -298,12 +262,6 @@ $(function () { // wait for document ready
     toggleClass(26200, 100, 'img[alt="github"]', 'show')
     toggleClass(26300, 100, 'img[alt="facebook"]', 'show')
     toggleClass(26500, 100, '.form-contato', 'showForm')
-
-    
-    
-
-
-        
 
 });
 
