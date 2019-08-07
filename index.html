@@ -109,7 +109,7 @@
                                     <input type="text" class="form-control" id="name" name="name" required>
                                 </div>
                                 <div class="form-group inputEmail">
-                                    <input type="text" class="form-control" id="email" name="email" required>
+                                    <input type="email" class="form-control" id="email" name="email" required>
                                 </div>
 
                                 <div class="form-group inputTextArea">
@@ -121,20 +121,43 @@
                             </form>
                             <div class="outros-contatos">
                                 <div class="outros-contatos-img">
-                                    <img src="./assets/imgs/logos/whatsapp.png" alt="whatsapp">
+                                    <a href="https://wa.me/5514981069405" target="_blank">
+                                        <img src="./assets/imgs/logos/whatsapp.png" alt="whatsapp">
+                                    </a> 
                                 </div>
                                 <div class="outros-contatos-img">
-                                    <img src="./assets/imgs/logos/linkedin.png" alt="linkedin">
+                                    <a href="https://linkedin.com/in/renan-sugiyama-9b99b518a/" target="_blank">
+                                        <img src="./assets/imgs/logos/linkedin.png" alt="linkedin">
+                                    </a>
                                 </div>
                                 <div class="outros-contatos-img">
-                                    <img src="./assets/imgs/logos/github.png" alt="github">
+                                    <a href="https://github.com/renan-sugiyama/" target="_blank">
+                                        <img src="./assets/imgs/logos/github.png" alt="github">
+                                    </a>
                                 </div>
                                 <div class="outros-contatos-img">
-                                    <img src="./assets/imgs/logos/facebook.png" alt="facebook">
+                                    <a href="https://www.facebook.com/renan.sugiyama" target="_blank">
+                                        <img src="./assets/imgs/logos/facebook.png" alt="facebook">
+                                    </a>
                                 </div>
                             </div>
                         </div>
                         <div class="tunel-reverso"></div>
+                        
+                        <!-- alerts para email - contato  -->
+                        <div class="alert alert-success" role="alert">
+                            Sua mensagem foi enviada! 
+                            <button type="button" class="close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="alert alert-warning" role="alert">
+                            <span>Ops! Houve um erro. Por favor, tente novamente mais tarde.</span>
+                            
+                            <button type="button" class="close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
                     </section>
                 </div>
 
@@ -161,6 +184,7 @@
     <!-- animejs -->
     <script src="./node_modules/animejs/lib/anime.min.js"></script>
 
+    <script src="./assets/scripts/mail.js"></script>
     <script src="./assets/scripts/animation.js"></script>
     <script src="./assets/scripts/script.js"></script>
 </body>
