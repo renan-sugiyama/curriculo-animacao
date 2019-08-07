@@ -103,13 +103,11 @@ form button[type="submit"] {
 }
 
 .form-group {
-    display: flex;
     margin: 10px 0;
     position: relative;
 }
 
-.form-group input, .form-group textarea {
-    flex: 2;
+.form-group input, .form-group textarea {    
     border-radius: 10px;
     border: none;
     line-height: 30px;
@@ -121,7 +119,7 @@ form button[type="submit"] {
     height: 30px;
 }
 
-
+/* 
 .form-group::after {
     content: "Email";
     position: absolute;
@@ -144,7 +142,7 @@ form button[type="submit"] {
 
 .inputTextArea.form-group::after {
     content: "Mensagem";
-}
+} */
 
 .form-group input:focus, .form-group textarea:focus {
     outline: none;
@@ -348,57 +346,6 @@ img#personagem  {
 }
 
 
-@media (max-width: 960px) {
-    .portfolio-card img{
-        max-height: 350px;
-    }
-  }
-
-  @media (max-width: 860px) {
-
-    .panel1 .text-intro h1 {
-        flex-basis: 60%;
-    }
-
-    .portfolio-section {
-        align-items: center;
-        flex-direction: column;
-        height: 100%;
-    }
-    .portfolio-galeria{
-        flex: 1;
-        max-height: 50vh;
-        width: 100%;
-    }
-
-    .portfolio-galeria .portfolio-card {
-        flex-basis: 50%;
-        display: flex;
-        margin: 0;
-    }
-
-    .portfolio-card img{
-        width: 110px;
-        height: 245px;
-    }
-
-    .rodaCartao {
-        animation: none !important;
-        opacity: 1 !important;
-        transform: rotate(90deg);
-    }
-
-    .panel5 .tunel, .panel7 .tunel-reverso {
-        width: 140px;
-        height: 166px;
-        top: 90%;
-    }
-
-    .panel6 .tunel-extenso {
-        height: 166px;
-        top: 90%;
-    }
-  }
 
 /* alerta para contato - email */
 .alert {
@@ -581,3 +528,61 @@ img#personagem  {
 
 
 
+
+@media (max-width: 960px) {
+    .portfolio-card img{
+        max-height: 350px;
+    }
+  }
+
+  @media (max-width: 860px) {
+
+    .panel1 .text-intro h1 {
+        flex-basis: 60%;
+    }
+
+    .portfolio-section {
+        align-items: center;
+        flex-direction: column;
+        height: 100%;
+        justify-content: start;
+    }
+    .portfolio-galeria{
+        flex: 1;
+        max-height: 50vh;
+        width: 100%;
+    }
+
+    .portfolio-galeria .portfolio-card {
+        flex-basis: 50%;
+        display: flex;
+        margin: 0;
+    }
+
+    .portfolio-card img{
+        width: 110px;
+        height: 245px;
+    }
+
+    .rodaCartao {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: rotate(90deg);
+    }
+
+    .panel5 .tunel, .panel7 .tunel-reverso {
+        width: 140px;
+        height: 166px;
+        top: 90%;
+    }
+
+    .panel6 .tunel-extenso {
+        height: 166px;
+        top: 90%;
+    }
+
+    .outros-contatos-img {
+        z-index: 1;
+    }
+
+  }
