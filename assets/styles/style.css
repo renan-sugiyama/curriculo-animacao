@@ -6,7 +6,9 @@ body {
     margin: 0;
 }
 
-
+button {
+    cursor: pointer;
+}
 
 
 /* estrutura */
@@ -100,6 +102,14 @@ form {
     transform: translate(30%, 30%);
     transition: all 0.5s linear;
 }
+form button[type="submit"] {
+    border-radius: 10px;
+    border: none;
+    padding: 0.5rem 1rem;
+    background-color: #007bff;
+    color: white;
+}
+
 
 .form-group {
     display: flex;
@@ -164,8 +174,13 @@ form {
     justify-content: space-around;
 }
 
+.outros-contatos a{
+    display: block;
+}
+
 .outros-contatos-img {
     flex-basis: 18%;
+    cursor: pointer;    
 }
 
 .outros-contatos img {
@@ -351,6 +366,43 @@ img#personagem  {
     
     
 }
+
+/* alerta para contato - email */
+.alert {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    width: 80%;
+    display: none;
+  }
+
+  .alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+  }
+
+  .alert-warning {
+    color: #856404;
+    background-color: #fff3cd;
+    border-color: #ffeeba;
+  }
+
+  .alert .close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0.75rem 1.25rem;
+    font-size: 1rem;
+    color: inherit;
+    background-color: inherit;
+    border: none;
+  }
 
 
 /* animação */
