@@ -107,6 +107,10 @@ form button[type="submit"] {
     position: relative;
 }
 
+.form-control {
+    width: 100%;
+}
+
 .form-group input, .form-group textarea {    
     border-radius: 10px;
     border: none;
@@ -172,6 +176,10 @@ form button[type="submit"] {
     max-width: 100%;
     height: auto;
     opacity: 0;
+}
+
+.outros-contatos-img, .form-contato {
+    z-index: 1;
 }
 
 /* elementos da tela */
@@ -586,8 +594,5 @@ img#personagem  {
         top: 90%;
     }
 
-    .outros-contatos-img, .form-contato showForm {
-        z-index: 1;
-    }
 
   }
