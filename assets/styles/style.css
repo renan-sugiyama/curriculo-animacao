@@ -554,9 +554,16 @@ img#personagem  {
     }
 
     .portfolio-galeria .portfolio-card {
-        flex-basis: 50%;
         display: flex;
         margin: 0;
+    }
+
+    .card-contato-form {
+        width: 60%;
+    }
+
+    .form-group input, .form-group textarea {    
+            width: 100%
     }
 
     .portfolio-card img{
@@ -565,9 +572,7 @@ img#personagem  {
     }
 
     .rodaCartao {
-        animation: none !important;
         opacity: 1 !important;
-        transform: rotate(90deg);
     }
 
     .panel5 .tunel, .panel7 .tunel-reverso {
@@ -581,7 +586,7 @@ img#personagem  {
         top: 90%;
     }
 
-    .outros-contatos-img {
+    .outros-contatos-img, .form-contato showForm {
         z-index: 1;
     }
 
