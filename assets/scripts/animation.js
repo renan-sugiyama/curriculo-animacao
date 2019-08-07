@@ -136,9 +136,10 @@ $(function () { // wait for document ready
             duration: duration  
         })
         .setTween(personagemtween)
+        .addIndicators({colorStart: "transparent", colorEnd: "transparent", colorTrigger: "transparent"}) // add indicators (requires plugin)
         .addTo(controller);
     }
-
+    
     function animaJumpSprite (offset, duration){
         new ScrollMagic.Scene({
             offset: offset, 
